@@ -1,8 +1,9 @@
 // xTODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const fs = require('fs');
 
 // xTODO: Create an array of questions for user input
-const questions = [];  // how should I use this?
+//const questions = [];  // how should I use this?
 
 inquirer.prompt([
     {
