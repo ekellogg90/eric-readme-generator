@@ -11,11 +11,6 @@ inquirer.prompt([
         message: 'ReadMe name:',
     },
     {
-        name: 'purpose',
-        type: 'input',
-        message: 'Purpose:',
-    },
-    {
         name: 'description',
         type: 'input',
         message: 'Please describe how a user will interact with this application:',
@@ -78,12 +73,51 @@ inquirer.prompt([
         message: 'How should I contribute to your application?:',
     }
 ])
+.then((data) => {
+    const readMe = generateReadme(data);
+})
+
+function generateReadme({title, description, motivation, why, solves, learn, challenges, installation, usage, creditsPeople, credits3rdParty, license, contribute}) {
+    return `# ${title}
+    
+    ## Description
+    
+    ${description}
+
+    - ${motivation}
+    - ${why}
+    - ${solves}
+    - ${learn}
+    - ${challenges}
+    
+    ## Installation
+    ${installation}
+    
+    ## Usage
+    ${usage}
+    
+    ## Credits
+    - ${creditsPeople}
+    - ${credits3rdParty}
+    
+    ## License
+    ${license}
+    
+    ## How to Contribute
+    ${contribute}`
+}
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log('Success'));
+}
+
+
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    writeToFile('README.md', readMe);
+}
 
 // Function call to initialize app
 init();
