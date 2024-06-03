@@ -1,17 +1,8 @@
-/*
-WHEN I choose a license for my application from a list of options
-THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-
-WHEN I click on the links in the Table of Contents
-THEN I am taken to the corresponding section of the README
-*/
-
-
-// xTODO: Include packages needed for this application
+// Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// xTODO: Create an array of questions for user input
+// Gather user input
 function userInput() {
     const questions = [{
         name: 'title',
@@ -91,7 +82,6 @@ function userInput() {
         message: 'List any 3rd party assets you used:',
     },
 ];
-
         inquirer.prompt(questions)
         .then((data) => {
             let licenseBadge = '';
@@ -114,16 +104,23 @@ function userInput() {
 }
 
 function generateReadme({title, motivation, why, solves, learn, challenges, installation, usage, creditsPeople, credits3rdParty, license, contribute, tests, gitHub, email}, licenseBadge) {
-    return `# ${title}  ${licenseBadge}
+    return `# ${title}                                                                                                                      ${licenseBadge}
     
 ## Description
-- ${motivation}
-- ${why}
-- ${solves}
-- ${learn}
-- ${challenges}
+- Motivation: ${motivation}
+- Why: ${why}
+- What problem does this solve: ${solves}
+- What I learned: ${learn}
+- Challanges: ${challenges}
 
 ## Table of Contents
+- [Installation](#Installation)
+- [Usage](#Usage) 
+- [License](#License) 
+- [Contribute](#Contribute) 
+- [Tests](#Tests) 
+- [Questions](#Questions) 
+- [Credits](#Credits) 
 
 ## Installation
 ${installation}
@@ -132,17 +129,17 @@ ${installation}
 ${usage}
 
 ## License
-${license}
+This application is covered under the ${license} license.
 
-## How to Contribute
+## Contribute
 ${contribute}
 
 ## Tests
 ${tests}
 
 ## Questions
-[${gitHub}'s gitHub profile:](https://github.com/${gitHub})
-Please contact me at ${email} for any additional questions.
+- [${gitHub}'s gitHub profile](https://github.com/${gitHub})
+- Please contact me at <a href="mailto:${email}">${email}</a> for any additional questions.
 
 ## Credits
 - ${creditsPeople}
@@ -150,12 +147,12 @@ Please contact me at ${email} for any additional questions.
 `
 }
 
-// xTODO: Create a function to write README file
+// Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log('Success'));
 }
 
-// xTODO: Create a function to initialize app
+// Function to initialize app
 function init() {
     userInput();
 }
