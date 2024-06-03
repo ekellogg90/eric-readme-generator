@@ -22,7 +22,7 @@ Use NPM to install Inquirer
 ## Usage
 Run this application through node index.js and then answer the prompts
 
-[Video Demo](https://app.screencastify.com/v2/manage/videos/8ccHibixyLdNtso849gs)
+[Video Demo]([https://app.screencastify.com/v2/manage/videos/8ccHibixyLdNtso849gs](https://drive.google.com/file/d/1YUfRObOvQW9jv_9RPnHsBShE5YrUJEKK/view?usp=sharing))
 
 ## License
 This application is covered under the Apache license 2.0 license.
