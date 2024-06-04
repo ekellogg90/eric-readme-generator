@@ -142,8 +142,8 @@ ${tests}
 - Please contact me at <a href="mailto:${email}">${email}</a> for any additional questions.
 
 ## Credits
-- ${creditsPeople}
-- ${credits3rdParty}
+- People to credit: ${creditsPeople}
+- Tools used: ${credits3rdParty}
 `
 }
 
