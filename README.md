@@ -22,7 +22,7 @@ Use NPM to install Inquirer
 ## Usage
 Run this application through node index.js and then answer the prompts
 
-[Video Demo](https://drive.google.com/file/d/1YUfRObOvQW9jv_9RPnHsBShE5YrUJEKK/view?usp=sharing)
+[Video Demo](https://drive.google.com/file/d/1rpUgJ4J5uJ85fvob6t1o3JFJurvNDEne/view?usp=sharing)
 
 ## License
 This application is covered under the Apache license 2.0 license.
